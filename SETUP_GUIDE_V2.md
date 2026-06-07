@@ -5,9 +5,8 @@
 ### Major Updates:
 1. **Social Bubble** - New first-class feature for private social circles
 2. **Enhanced Content Moderation** - Semantic AI-powered moderation with Gemini
-3. **Direct Gemini API Integration** - Replaced Emergent LLM with Google Gemini Free API
-4. **Weekly Challenges** - Gamified wellness challenges with growth tokens
-5. **Improved Privacy** - No likes, no metrics, no public counters
+3. **Weekly Challenges** - Gamified wellness challenges with growth tokens
+4. **Improved Privacy** - No likes, no metrics, no public counters
 
 ---
 
@@ -496,37 +495,7 @@ chrome://extensions/ → MindEase → Inspect views
 - **TOXIC/HATE:** Blocked immediately with AI reason
 - **AMBIGUOUS:** Suggests clearer wording
 - **PROFANITY_ONLY:** Allowed if positive intent ("fucking amazing")
-- **SAFE/NEGATIVE:** Allowed through
-
----
-
-## 📖 API Documentation
-
-### New Endpoints
-
-**Social Bubble:**
-```bash
-GET  /api/bubbles                    # Get my bubbles
-POST /api/bubbles                    # Create bubble
-POST /api/bubbles/invite             # Invite member
-DELETE /api/bubbles/{id}/leave       # Leave bubble
-GET  /api/bubbles/{id}/posts         # Get bubble posts
-POST /api/bubbles/posts              # Create post
-POST /api/bubbles/posts/{id}/reply   # Add reply
-```
-
-**Challenges:**
-```bash
-GET /api/challenges/current          # This week's challenge
-GET /api/challenges/my-completions   # My completion history
-```
-
-### Updated Endpoints
-
-**All endpoints now use Gemini instead of Emergent LLM:**
-- `/api/wellness/chat` - AI chatbot
-- `/api/community/posts` - Enhanced moderation
-- `/api/learning/flashcards/generate` - Flashcard generation
+- **SAFE:** Allowed through
 
 ---
 
@@ -548,36 +517,6 @@ GET /api/challenges/my-completions   # My completion history
 
 ---
 
-## 🎓 Development Tips
-
-### Adding a New Feature:
-```bash
-1. Add model to backend/server.py
-2. Create API endpoints
-3. Test with curl or Postman
-4. Create frontend page
-5. Add route to App.js
-6. Update navigation in Layout.js
-7. Test end-to-end
-```
-
-### Debugging:
-```bash
-# Backend logs:
-# Look at terminal running uvicorn
-
-# Frontend logs:
-# Browser console (F12)
-
-# Database:
-mongosh
-use mindease_db
-db.bubbles.find().pretty()
-
-# Extension:
-chrome://extensions/ → Inspect views
-```
-
 ### Database Collections:
 ```javascript
 users              // User accounts
@@ -592,41 +531,6 @@ quotes             // Inspirational quotes
 extension_data     // Extension sync data
 extension_logs     // Extension events
 ```
-
----
-
-## 🆘 Getting Help
-
-### Check Logs:
-```bash
-# Backend: Look at uvicorn terminal
-# Frontend: Browser DevTools (F12) → Console
-# Extension: chrome://extensions/ → Inspect
-# MongoDB: mongosh → use mindease_db → db.collection.find()
-```
-
-### Common Issues:
-1. **90% of issues:** Environment variables not set
-2. **Check:** All `.env` files configured correctly
-3. **Verify:** MongoDB running, correct ports
-4. **Test:** API responds at http://localhost:8001/api/
-
-### Clean Slate:
-```bash
-# Stop all services (Ctrl+C)
-
-# Reset database:
-mongosh
-use mindease_db
-db.dropDatabase()
-exit
-
-# Clear browser:
-# Chrome → Settings → Privacy → Clear browsing data
-
-# Restart all services
-```
-
 ---
 
 ## ✅ Quick Start Checklist
@@ -639,21 +543,9 @@ exit
 - [ ] Extension loaded in Chrome
 - [ ] Account created and logged in
 - [ ] Token added to extension
-- [ ] Test Social Bubble feature
-- [ ] Test enhanced moderation
+- [ ] Test features- type into extension enabled browser, on application - try social bubble, toxicity moderator, flashcard generation,etc
 
 ---
 
 ## 🎉 You're All Set!
-
-Visit **http://localhost:3000** and enjoy MindEase v2.0!
-
-### What to Try First:
-1. Create your first bubble
-2. Post with this week's challenge tag
-3. Earn your first growth token
-4. Chat with the AI wellness bot
-5. Generate flashcards
-6. Test the content moderation
-
 **Have fun and stay mindful! 🧘**
