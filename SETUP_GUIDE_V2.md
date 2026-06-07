@@ -1,14 +1,4 @@
-# MindEase v2.0 - Complete Local Setup Guide
-
-## 🆕 What's New in v2.0
-
-### Major Updates:
-1. **Social Bubble** - New first-class feature for private social circles
-2. **Enhanced Content Moderation** - Semantic AI-powered moderation with Gemini
-3. **Weekly Challenges** - Gamified wellness challenges with growth tokens
-4. **Improved Privacy** - No likes, no metrics, no public counters
-
----
+# Mind@Ease - Complete Local Setup Guide
 
 ## 📋 Prerequisites
 
